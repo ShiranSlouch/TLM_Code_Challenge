@@ -8,6 +8,7 @@ const Filter = require('bad-words-plus')
 const filter = new Filter();
 const arr = require("an-array-of-english-words").filter(c => c.length > 12)
 
+// 
 filter.removeWords(...arr)
 
 export default class NinjaName extends React.Component{
@@ -22,6 +23,10 @@ export default class NinjaName extends React.Component{
   handleClearSelectedWord = () => {
     this.setState(() => ({ selectedWord: undefined }))
   };
+  handleSetSelectedWord = (wordText) => {
+    this.setState(() => ({ selectedWord: wordText }))
+
+  }
   handleDeleteWord = (wordToRemove) => {
     this.setState((prevState) => ({
       words: prevState.words.filter((word) => wordToRemove !== word )
@@ -56,9 +61,17 @@ export default class NinjaName extends React.Component{
     return this.state.words.map(c => this.getNinjaWordForInput(c)).join(" ")
   }
   toObjectName = (wordText) => {
-    const name = this.toName();
+    if(!wordText){
+      return 
+    }
+    const name = this.getNinjaWordForInput(wordText);
     console.log('NAME:', name)
     
+  }
+  onWordClick = (wordText) => {
+    this.toObjectName(wordText)
+    const name = this.getNinjaWordForInput(wordText)
+    this.handleSetSelectedWord(name)
   }
    
   handleAddWord = (word) => {
@@ -105,7 +118,7 @@ export default class NinjaName extends React.Component{
             handlePick={this.handlePick}
             getNinjaWordForInput={this.getNinjaWordForInput}
             toName={this.toName}
-            toObjectName={this.toObjectName}
+            onWordClick={this.onWordClick}
           />
           <AddWord
             handleAddWord={this.handleAddWord}

@@ -8,7 +8,8 @@ const Word = (props) => (
     <button 
       className="button"  
       onClick={(e) => {
-        props.toObjectName(props.wordText)}}
+        props.onWordClick(props.wordText)
+      }}
       >
         Click for Ninja Name
     </button>

@@ -24,7 +24,7 @@ const Words = (props) => (
           handlePick={props.handlePick}
           getNinjaWordForInput={props.getNinjaWordForInput}
           toName={props.toName}
-          toObjectName={props.toObjectName}
+          onWordClick={props.onWordClick}
         />
       ))
     }
