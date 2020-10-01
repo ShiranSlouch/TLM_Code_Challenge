@@ -1,4 +1,4 @@
-const NinjaName = require("./server/lib");
+const NinjaName = require("../server/lib");
 const assert = require('assert');
 
 describe('NinjaName', function () {

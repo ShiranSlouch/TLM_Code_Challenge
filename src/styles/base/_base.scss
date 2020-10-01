@@ -15,3 +15,22 @@ button {
 button:disabled{
   cursor: default;
 }
+
+
+
+@media (max-width: 767px) {
+  .word {
+      display: block;
+  }
+
+  button.button {
+      display: block;
+      margin-top: 15px;
+  }
+}
+
+@media (min-width: 768px){
+  p.word__text {
+  flex: 0 0 60%;
+}
+}
