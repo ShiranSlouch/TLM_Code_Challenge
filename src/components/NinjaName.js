@@ -20,7 +20,7 @@ export default class NinjaName extends React.Component{
   handleSetSelectedWord = (wordText) => {
     this.setState(() => ({ selectedWord: wordText }))
 
-  }
+  };
   handleDeleteWord = (wordToRemove) => {
     this.setState((prevState) => ({
       words: prevState.words.filter((word) => wordToRemove !== word )
@@ -30,10 +30,10 @@ export default class NinjaName extends React.Component{
   onWordClick = (wordText) => {
     fetch("/ninjify?x=" + wordText)
       .then(res => res.json())
-      .then(({name}) => {
-        this.handleSetSelectedWord(name)
+      .then(res => {
+        this.handleSetSelectedWord(res.name)
       })
-  }
+  };
    
   handleAddWord = (word) => {
     if(!word){
@@ -76,9 +76,6 @@ export default class NinjaName extends React.Component{
               words={this.state.words}
               handleDeleteWords={this.handleDeleteWords}
               handleDeleteWord={this.handleDeleteWord}
-              handlePick={this.handlePick}
-              getNinjaWordForInput={this.getNinjaWordForInput}
-              toName={this.toName}
               onWordClick={this.onWordClick}
             />
             <AddWord

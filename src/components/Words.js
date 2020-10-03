@@ -21,9 +21,6 @@ const Words = (props) => (
           wordText={word}
           count={index + 1}
           handleDeleteWord={props.handleDeleteWord}
-          handlePick={props.handlePick}
-          getNinjaWordForInput={props.getNinjaWordForInput}
-          toName={props.toName}
           onWordClick={props.onWordClick}
         />
       ))

@@ -23,8 +23,8 @@ export default class AddWord extends React.Component {
           className="add-word"
           onSubmit={this.handleAddWord}
         >
-        <input className="add-word__input" type="text" name="word"/>
-        <button className="button">Add Buzzword</button>
+          <input className="add-word__input" type="text" name="word"/>
+          <button className="button">Add Buzzword</button>
         </form>
       </div>
     )
