@@ -78,11 +78,11 @@ class NinjaName {
         for (let i = 0; i < input.length; ++i) {
             // Get the ASCII code of the current letter
             const cCode = input.charCodeAt(i)
-
+debugger
             // Validate the ASCII code to be between a and z
             // The range is: a: 97, z: 122
             // Ignore the characters that are not letters
-            if (cCode >= 97 || cCode <= 122) {
+            if (cCode >= 97 && cCode <= 122) {
                 sum += cCode
                 ++length
             }
